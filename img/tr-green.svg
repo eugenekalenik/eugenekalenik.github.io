@@ -1,0 +1,22 @@
+<svg width="16" height="16" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>original_Rectangle 9_49245493</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-902 3141)">
+<g id="original_Rectangle 9_49245493">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(904.76 -3141.07)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(904.76 -3141.07)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(6.83019 13.6604 -13.6604 6.83019 6.83019 0)">
+<stop offset="0" stop-color="#3BC278"/>
+<stop offset="1" stop-color="#C0E577"/>
+</linearGradient>
+<path id="path0_fill" fill-rule="evenodd" d="M 7.53364 1.21876C 9.42353 -0.671134 12.655 0.667367 12.655 3.34008L 12.655 12.4147C 12.655 14.0715 11.3118 15.4147 9.65496 15.4147L 0.580367 15.4147C -2.09235 15.4147 -3.43085 12.1832 -1.54095 10.2933L 7.53364 1.21876Z"/>
+<path id="path1_stroke_2x" d="M 10.655 3.34008L 10.655 12.4147L 14.655 12.4147L 14.655 3.34008L 10.655 3.34008ZM 9.65496 13.4147L 0.580367 13.4147L 0.580367 17.4147L 9.65496 17.4147L 9.65496 13.4147ZM -0.12674 11.7076L 8.94785 2.63297L 6.11942 -0.195453L -2.95517 8.87914L -0.12674 11.7076ZM 14.655 3.34008C 14.655 -1.11444 9.26925 -3.34528 6.11942 -0.195453L 8.94785 2.63297C 9.57781 2.00301 10.655 2.44918 10.655 3.34008L 14.655 3.34008ZM 10.655 12.4147C 10.655 12.967 10.2072 13.4147 9.65496 13.4147L 9.65496 17.4147C 12.4164 17.4147 14.655 15.1761 14.655 12.4147L 10.655 12.4147ZM 0.580367 13.4147C -0.310538 13.4147 -0.756705 12.3375 -0.12674 11.7076L -2.95517 8.87914C -6.10499 12.029 -3.87416 17.4147 0.580367 17.4147L 0.580367 13.4147Z"/>
+</defs>
+</svg>
