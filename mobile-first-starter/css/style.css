@@ -1,0 +1,405 @@
+/*@import url("https://fonts.googleapis.com/css?family=Arimo|Roboto|Ubuntu:300,300i,400,400i,500,500i,700,700i");*/
+@import "reset.css";
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+body {
+	color: #ff6666;
+	font: 16px/24px Ubuntu, sans-serif;
+	margin: 0;
+}
+
+.button-top {
+	background: #ff6666;
+	border-radius: 50%;
+	bottom: 48px;
+	box-shadow: 0 0 16px #000000;
+	color: #ffffff;
+	cursor: pointer;
+	display: none;
+	font-weight: bold;
+	height: 48px;
+	line-height: 48px;
+	position: fixed;
+	left: calc(50% - 24px);
+	text-align-last: center;
+	transition: ease all .5s;
+	width: 48px;
+	z-index: 10;
+}
+.show-button-top {
+	display: block;
+	transition: ease all .5s;
+}
+
+/* GRID ------------------------------------------ */
+
+.container {
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0 24px;
+	position: relative;
+	/*width: 1140px;*/
+}
+
+.row {
+	/*margin: 0 -15px; */
+}
+
+.col-1-6,
+.col-2-6,
+.col-3-6,
+.col-4-6,
+.col-5-6,
+.col-6-6 {
+	/*float: left;*/
+}
+
+.mr0 {
+	margin-right: 0;
+}
+
+/* HEADER -----------------------------------------*/
+
+header {
+	background: #ffcccc;
+	/*position: fixed;*/
+	/*width: 100%;*/
+	/*z-index: 100;*/
+	box-shadow: 0 0 24px #cccccc;
+	padding: 24px 0;
+}
+
+.logo {
+	background: #ff6666;
+	-webkit-background-size: 166px;
+	        background-size: 166px;
+	height: 48px;
+	margin: auto;
+	width: 200px;
+}
+
+.nav-icon {
+	background: #ff9999;
+	cursor: pointer;
+	display: none;
+	height: 48px;
+	position: absolute;
+	right: 24px;
+	top: 0;
+	width: 48px;
+}
+
+.nav-icon:hover + .nav {
+	display: block;
+}
+
+.menu {
+	display: none;
+}
+
+.menu .logo {
+	display: none;
+}
+
+.nav {
+	font-weight: bold;
+	margin-top: 24px;
+}
+
+.nav a {
+	background: #ff6666;
+	color: white;
+	display: block;
+	float: left;
+	letter-spacing: 2px;
+	margin-bottom: 8px;
+	overflow: hidden;
+	padding: 4px 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: calc(50% - 4px);
+}
+
+.nav a:nth-child(even) {
+	margin-left: 4px;
+}
+
+.nav a:nth-child(odd) {
+	/*background: #ff6666;*/
+	margin-right: 4px;
+}
+
+.nav a:hover {
+	background: #ffffff;
+	color: #ff6666;
+}
+
+.langs {
+	display: table;
+	margin-top: 48px;
+	width: 100%;
+}
+
+.langs a {
+	border: 1px solid #e5e5e5;
+	color: #999999;
+	display: table-cell;
+	float: left;
+	font-size: .8em;
+	font-weight: bold;
+	padding: 2px 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 33.3333%;
+}
+
+.langs a.active {
+	background: coral;
+	border-color: coral;
+	color: coral;
+	color: white;
+}
+
+.langs a:hover {
+	background: transparent;
+	border-color: coral;
+	color: coral;
+}
+
+.social {
+	display: table;
+	margin-top: 48px;
+	width: 100%;
+}
+
+.social a {
+	background: #e5e5e5;
+	display: table-cell;
+	height: 30px;
+}
+
+.social a.fb {
+	background: url(../images/facebook.png) no-repeat 50% 50%;
+}
+.social a.fb:hover {
+	background: url(../images/facebook_hover.png) no-repeat 50% 50%;
+}
+
+.social a.tw {
+	background: url(../images/twitter.png) no-repeat 50% 50%;
+}
+.social a.tw:hover {
+	background: url(../images/twitter_hover.png) no-repeat 50% 50%;
+}
+
+.social a.in {
+	background: url(../images/instagram.png) no-repeat 50% 50%;
+}
+.social a.in:hover {
+	background: url(../images/instagram_hover.png) no-repeat 50% 50%;
+}
+
+.social a.li {
+	background: url(../images/linkedin.png) no-repeat 50% 50%;
+}
+.social a.li:hover {
+	background: url(../images/linkedin_hover.png) no-repeat 50% 50%;
+}
+
+.padding-block {
+	padding-top: 92px;
+}
+
+/* PAGES ---------------------------------------------------------- */
+
+.jumbotron {
+	background: #ffdddd;
+	padding: 48px 0;
+	text-align: center;
+}
+
+.jumbotron h1 {
+	color: #ff6666;
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 1;
+	margin-bottom: 16px;
+}
+
+.jumbotron p {
+	color: #ff9999;
+	margin: 0 0 16px 0;
+}
+
+.jumbotron button {
+	background: #ff6666;
+	border: 0;
+	color: #ffffff;
+	font: 16px/24px Ubuntu, sans-serif;
+	letter-spacing: 2px;
+	padding: 8px 24px;
+	text-transform: uppercase;
+	transition: ease all .3s;
+}
+
+.jumbotron button:hover {
+	background: #ff0000;
+	/*color: #ff6666;*/
+}
+
+.section {
+	background: #ffeeee;
+	padding-bottom: 48px;
+}
+
+.section-header {
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 48px auto 8px;
+	width: 720px;
+}
+
+.section-description {
+	color: #666666;
+	margin: 0 auto 48px;
+	width: 720px;
+}
+
+.col {
+	margin-top: 48px;
+	text-align: center;
+}
+
+.col-image {
+	background: #ff6666;
+	height: 192px;
+	margin-bottom: 16px;
+	width: 100%;
+}
+
+.col-header {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 1;
+	margin-bottom: 8px;
+}
+
+.col-description {
+	color: #ff6666;
+	max-height: 72px;
+	overflow: hidden;
+}
+
+/* FOOTER -------------------------------------- */
+
+footer {
+	background: #ff6666;
+	color: #ffcccc;
+	padding: 24px 0;
+	text-align: center;
+}
+
+@media all and (min-width: 768px) {
+	.nav a {
+		float: left;
+		margin-left: 0;
+		margin-right: 0;
+		width: calc(33.3333% - 4px);
+	}
+
+	.nav a:nth-child(1),
+	.nav a:nth-child(4) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.nav a:nth-child(2),
+	.nav a:nth-child(5) {
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+
+	.nav a:nth-child(3),
+	.nav a:nth-child(6) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.container {
+		padding: 0;
+		width: 720px;
+	}
+
+	.col-1-6,
+	.col-2-6,
+	.col-3-6,
+	.col-4-6,
+	.col-5-6,
+	.col-6-6 {
+		/*float: left;*/
+	}
+
+	.col {
+		float: left;
+		margin-right: 24px;
+		width: 348px;
+	}
+
+	.col:nth-child(even) {
+		margin-right: 0;
+	}
+
+	.jumbotron h1 {
+		font-size: 48px;
+	}
+
+	.jumbotron p {
+		font-size: 24px;
+		line-height: 1.5;
+	}
+}
+
+@media all and (min-width: 1200px) {
+
+	.jumbotron {
+		padding: 64px 0;
+	}
+
+	.container {
+		width: 1140px;
+	}
+
+	.col {
+		width: 267px;
+	}
+
+	.col:nth-child(even) {
+		margin-right: 24px;
+	}
+
+	.col:nth-child(4) {
+		margin-right: 0;
+	}
+
+	.nav a,
+	.nav a:nth-child(odd),
+	.nav a:nth-child(even) {
+		float: left;
+		margin-bottom: 0;
+		margin-left: 0;
+		margin-right: 8px;
+		width: calc(16.6666% - 8px);
+	}
+
+	.nav a:last-chid {
+		margin-right: 0 !important;
+	}
+}
