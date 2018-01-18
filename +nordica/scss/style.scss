@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+}
+
+body {
+    font: 16px/1.5 Ubuntu, sans-serif;
+}
+
+.shown {
+    display: block !important;
+}
+
+header {
+
+    background: #fcc;
+    color: #E30613;
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 20px;
+
+        text-transform: uppercase;
+
+        border-bottom: 1px solid #f99;
+
+        .lang {
+            cursor: pointer;
+        }
+    }
+
+    .lang-choice {
+        display: none;
+
+        padding: 20px;
+        overflow: hidden;
+        background: #c66;
+
+        
+
+        border-bottom: 1px solid #f99;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: #E30613;
+            text-decoration: none;
+        }
+
+        .times {
+            float: right;
+            // font-size: 40px;
+            // line-height: 20px;
+            // text-align: center;
+            color: #fff;
+
+            // height: 20px;
+            // width: 20px;
+
+            cursor: pointer;
+        }
+    }
+
+    .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        text-transform: uppercase;
+
+        padding: 20px;
+
+        .menu {
+            cursor: pointer;
+            padding: 10px;
+
+            &:hover {
+                background: #f66;
+            }
+        }
+
+        .logo {
+            padding: 0 20px;
+
+            svg {
+                width: 100%;
+            }
+
+            path:first-child {
+            }
+
+            path:last-child {
+                // display: none;
+                width: 0;
+            }
+        }
+
+        .user {
+            cursor: pointer;
+            padding: 10px;
+        }
+    }
+
+    .container {
+        padding: 0 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        * {
+            background: #fcc;
+        }
+
+        
+    }
+
+    .menu-content {
+        display: none;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 5px 20px;
+            border-bottom: 1px solid #f66;
+        }
+    }
+
+    .user-content {
+        display: none;
+        background: #f33;
+
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    header {
+
+        .container {
+            width: 960px;
+        }
+    }
+}
