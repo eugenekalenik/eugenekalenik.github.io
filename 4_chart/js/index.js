@@ -4,7 +4,7 @@
 const currency = '145';
 const startDate = '2018-11-1';
 const endDate = '2018-11-10';
-const NBRB_URL = `http://www.nbrb.by/API/ExRates/Rates/Dynamics/${currency}?startDate=${startDate}&endDate=${endDate}`;
+const NBRB_URL = `https://www.nbrb.by/API/ExRates/Rates/Dynamics/${currency}?startDate=${startDate}&endDate=${endDate}`;
 
 async function getDynamic() {
   try {
