@@ -1,6 +1,5 @@
 // Data & Fetch
 
-// const URL = 'https://jsonplaceholder.typicode.com/todos/1';
 const currency = '145';
 const startDate = '2018-11-1';
 const endDate = '2018-11-10';
@@ -66,10 +65,8 @@ function drawY(data) {
     ctx.fillText(minRate, 25, 500);
     ctx.fillText(maxRate, 25, 100);
     const rate = Number(item.Cur_OfficialRate) * 10000 - 21000;
-    const diff = Math.floor(rate);
-    console.log('transpiled:', diff);
-    drawRound((index + 1) * 80, diff, 5, 0, 2 * PI, false, 'transparent', 0, 'red');
-    drawLine((index + 1) * 80, diff, (index + 2) * 80, diff, '#999', 'round', 1);
+    drawLine((index + 1) * 80, rate, (index + 2) * 80, rate, '#999', 'round', 1);
+    drawRound((index + 1) * 80, rate, 3, 0, 2 * PI, false, 'transparent', 0, 'red');
   });
 
   drawLine(50, 50, 50, 550, '#999', 'round', 1);
