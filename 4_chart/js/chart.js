@@ -15,7 +15,7 @@ function drawAxes() {
 function drawAxesLines(data) {
   data.map((item, index) => {
     const x = (index + 1) * 75 + 50;
-    const y = canvas.height - (item.Cur_OfficialRate * 10000 - 21000) - 80;
+    const y = (index + 1) * 50;
 
     drawLine({
       x1: x,
