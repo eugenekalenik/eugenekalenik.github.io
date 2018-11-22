@@ -1,4 +1,4 @@
-const canvas = document.getElementById('canvas');
+const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-document.addEventListener('DOMContentLoaded', getRateDynamic);
+document.addEventListener('DOMContentLoaded', getRateDynamicRequest);

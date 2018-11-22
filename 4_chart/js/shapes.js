@@ -19,8 +19,8 @@ function drawRound({ x, y, radius, strokeStyle, lineWidth, fillStyle }) {
   ctx.lineWidth = lineWidth;
   ctx.fillStyle = fillStyle;
   ctx.arc(x, y, radius, startAngle, endAngle, clockwise);
-  ctx.stroke();
   ctx.fill();
+  ctx.stroke();
   ctx.closePath();
 }
 
@@ -30,8 +30,8 @@ function drawRectangle({ x1, y1, x2, y2, strokeStyle, lineWidth, fillStyle }) {
   ctx.lineWidth = lineWidth;
   ctx.fillStyle = fillStyle;
   ctx.rect(x1, y1, x2, y2);
-  ctx.stroke();
   ctx.fill();
+  ctx.stroke();
   ctx.closePath();
 }
 
