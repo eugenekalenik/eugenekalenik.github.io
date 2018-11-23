@@ -1,3 +1,6 @@
+import { ctx } from './index';
+
+
 function drawLine({ x1, y1, x2, y2, strokeStyle, lineCap, lineWidth }) {
   ctx.beginPath();
   ctx.strokeStyle = strokeStyle;

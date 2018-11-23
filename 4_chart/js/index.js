@@ -1,4 +1,6 @@
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
+import { getRateDynamicRequest } from './requests/index.js';
 
-document.addEventListener('DOMContentLoaded', getRateDynamicRequest);
+
+(function () {
+  getRateDynamicRequest();
+})();
