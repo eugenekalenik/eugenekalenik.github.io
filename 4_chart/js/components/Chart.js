@@ -9,16 +9,6 @@ export default class Chart {
     this.data = data;
     this.drawAxes();
     this.drawGrid();
-
-    this.listenEvents(ctx);
-
-    // this.render();
-  }
-
-  listenEvents(e) {
-    e.onmousemove = function() {
-      console.log(e);
-    }
   }
 
   drawAxes() {
@@ -56,35 +46,25 @@ export default class Chart {
   drawGrid() {
     const minRate = this.getMinRate();
     const maxRate = this.getMaxRate();
-
     const minValue = Math.floor(minRate * 100) / 100;
     const maxValue = Math.ceil(maxRate * 100) / 100;
 
-    const step = (maxValue - minValue) / this.data.length;
-
-    new Text({ text: maxValue, x: 120, y: (canvas.height - 100) / 20 });
-    new Text({ text: minValue, x: 120, y: (canvas.height - 100) / 1 });
-
-    console.log('minRate', minRate, 'maxRate', maxRate);
-    console.log('minValue', minValue, 'maxValue', maxValue);
-
     this.data.map((item, index) => {
       const x = index * (canvas.width - chartOptions.axes[0].x1) / this.data.length + 100;
-      const y = index * (canvas.height - chartOptions.axes[0].y1 - chartOptions.axes[0].x1) / this.data.length;
+      const yLine = index * (canvas.height - chartOptions.axes[0].y1 - chartOptions.axes[0].x1) / this.data.length;
+      const y = item.Cur_OfficialRate * 10000 - 21000;
       const text = new Date(item.Date).getDate() + '.' + new Date(item.Date).getMonth();
       const rate = item.Cur_OfficialRate;
-
       // X
       new Line({
         x1: 100,
-        y1: y,
+        y1: yLine,
         x2: 900,
-        y2: y,
+        y2: yLine,
         strokeStyle: '#f8f8f8',
         lineCap: 'round',
         lineWidth: 1
       });
-
       // Y
       new Line({
         x1: x,
@@ -95,14 +75,11 @@ export default class Chart {
         lineCap: 'round',
         lineWidth: 1
       });
-
       new Text({ text, x: x - 15, y: 550 }); // X
-      new Text({ text: rate, x: 50, y }); // Y
-      // new Text({ text: item.Cur_OfficialRate, x: x + 10, y: y + 15 });
-
+      new Text({ text: rate, x: 50, y: (550 - y) * .8 }); // Y
       new Round({
         x: x,
-        y: y,
+        y: (550 - y) * .8,
         radius: 5,
         strokeStyle: '#f00',
         lineWidth: 1,
