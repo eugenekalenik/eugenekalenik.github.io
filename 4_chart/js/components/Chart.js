@@ -1,7 +1,7 @@
-import Line from '../shapes/Line.js';
-import Round from '../shapes/Round.js';
-import Text from '../shapes/Text.js';
-import { canvas, chartOptions } from '../constants/index.js';
+import Line from './Line.js';
+import Round from './Round.js';
+import Text from './Text.js';
+import { canvas, ctx, chartOptions } from '../constants/index.js';
 
 
 export default class Chart {
@@ -10,7 +10,15 @@ export default class Chart {
     this.drawAxes();
     this.drawGrid();
 
+    this.listenEvents(ctx);
+
     // this.render();
+  }
+
+  listenEvents(e) {
+    e.onmousemove = function() {
+      console.log(e);
+    }
   }
 
   drawAxes() {
