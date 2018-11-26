@@ -7,43 +7,80 @@ import { canvas, ctx, chartOptions } from '../constants/index.js';
 export default class Chart {
   constructor(data) {
     this.data = data;
-    this.drawAxes();
     this.drawGrid();
-  }
-
-  drawAxes() {
-    chartOptions.axes.map(item => new Line(item));
-  }
-
-  getMinRate() {
-    let minRate = Infinity;
-
-    this.data.map(item => {
-      if (item.Cur_OfficialRate < minRate) {
-        minRate = item.Cur_OfficialRate;
-      } else {
-        return;
-      }
-    });
-
-    return minRate;
-  }
-
-  getMaxRate() {
-    let maxRate = 0;
-
-    this.data.map(item => {
-      if (item.Cur_OfficialRate > maxRate) {
-        maxRate = item.Cur_OfficialRate;
-      } else {
-        return;
-      }
-    });
-
-    return maxRate;
+    this.drawAxes();
   }
 
   drawGrid() {
+    const minRate = this.getMinRate();
+    const maxRate = this.getMaxRate();
+    const minValue = Math.floor(minRate * 100) / 100;
+    const maxValue = Math.ceil(maxRate * 100) / 100;
+
+    this.data.map((item, index) => {
+      const x = index * (canvas.width - chartOptions.axes[0].x1) / this.data.length + 100;
+      const x2 = (index + 1) * (canvas.width - chartOptions.axes[0].x1) / this.data.length + 100;
+      const yLine = index * 500 / this.data.length;
+      const y = item.Cur_OfficialRate * 10000 - 21000;
+      const text = new Date(item.Date).getDate() + '.' + new Date(item.Date).getMonth();
+      const rate = item.Cur_OfficialRate;
+
+      console.log(maxValue, minValue);
+
+      // Draw hotizontal grid lines
+      new Line({
+        x1: 100,
+        y1: yLine,
+        x2: 900,
+        y2: yLine,
+        strokeStyle: '#eee',
+        lineCap: 'round',
+        lineWidth: 1
+      });
+
+      // Draw vertical grid lines
+      new Line({
+        x1: x,
+        y1: 0,
+        x2: x,
+        y2: 500,
+        strokeStyle: '#eee',
+        lineCap: 'round',
+        lineWidth: 1
+      });
+
+      // Draw chart lines
+      new Line({
+        x1: x,
+        y1: (550 - y) * .8,
+        x2: x2,
+        y2: y - rate * 100,
+        strokeStyle: '#f00',
+        lineCap: 'round',
+        lineWidth: 1
+      });
+
+      new Text({ text, x: x - 15, y: 550 }); // X labels
+
+
+      new Text({ text: minValue * index - index * 2 + 2, x: 50, y: yLine }); // Y label
+
+
+      new Round({
+        x: x,
+        y: (550 - y) * .8,
+        radius: 5,
+        strokeStyle: '#f00',
+        lineWidth: 1,
+        fillStyle: '#fcc'
+      });
+
+      new Text({ text: rate, x: x + 10, y: (550 - y) * .8 - 10 }); // Tooltip
+
+    });
+  }
+
+  drawGridXYZ() {
     const minRate = this.getMinRate();
     const maxRate = this.getMaxRate();
     const minValue = Math.floor(minRate * 100) / 100;
@@ -87,6 +124,40 @@ export default class Chart {
       });
     });
   }
+
+  drawAxes() {
+    chartOptions.axes.map(item => new Line(item));
+  }
+
+  getMinRate() {
+    let minRate = Infinity;
+
+    this.data.map(item => {
+      if (item.Cur_OfficialRate < minRate) {
+        minRate = item.Cur_OfficialRate;
+      } else {
+        return;
+      }
+    });
+
+    return minRate;
+  }
+
+  getMaxRate() {
+    let maxRate = 0;
+
+    this.data.map(item => {
+      if (item.Cur_OfficialRate > maxRate) {
+        maxRate = item.Cur_OfficialRate;
+      } else {
+        return;
+      }
+    });
+
+    return maxRate;
+  }
+
+
 
   drawAxisX() {
     this.data.map((item, index) => {
