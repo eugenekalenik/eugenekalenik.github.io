@@ -59,6 +59,7 @@ function finish() {
 }
 
 function render() {
+    _qs('.step-number-done').classList.add('d-none');
     if (state.step === 1) {
         hideRows();
         _qs('#back').classList.add('d-none');

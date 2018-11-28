@@ -2,30 +2,22 @@ import React from 'react';
 
 
 const Buttons = (props) => {
-  const { step } = props;
+  const { step, make, model, transmission, fuelType } = props.state;
 
-  if (step === 1) {
-    return (
-      <div className="d-flex justify-content-between">
-        <button className="btn btn-primary" onClick={props.onPrevClick} disabled>Prev</button>
-        <button className="btn btn-primary" onClick={props.onNextClick}>Next</button>
-      </div>
-    )
-  }
-
-  if (step === 4) {
-    return (
-      <div className="d-flex justify-content-between">
-        <button className="btn btn-primary" onClick={props.onPrevClick}>Prev</button>
-        <button className="btn btn-success" onClick={props.onAddCar}>Add car</button>
-      </div>
-    )
+  const isNextButtonDesabled = () => {
+    return (step === 0 && make === '') || (step === 1 && model === '') || (step === 2 && transmission === '') || (step === 3 && fuelType === '');
   }
 
   return (
-    <div className="d-flex justify-content-between">
-      <button className="btn btn-primary" onClick={props.onPrevClick}>Prev</button>
-      <button className="btn btn-primary" onClick={props.onNextClick}>Next</button>
+    <div className="row">
+      <div className="col-2"></div>
+      <div className="col-10">
+        <div className="d-flex">
+          {step > 0 && <button className="btn btn-light mr-2" onClick={props.onPrev}>Prev</button>}
+          {step !== 4 && <button className="btn btn-primary" onClick={props.onNext} disabled={isNextButtonDesabled()}>Next</button>}
+          {step === 4 && <button className="btn btn-success" onClick={props.onReset}>Add car</button>}
+        </div>
+      </div>
     </div>
   )
 }

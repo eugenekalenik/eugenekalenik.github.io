@@ -37,6 +37,13 @@ const tasks = [
     demoUrl: '',
     codeUrl: codeUrl + '',
   },
+  {
+    id: 6, maxScore: '-', score: '-',
+    title: 'Stepper.',
+    description: 'React, Bootstrap',
+    demoUrl: '6_wizard_react/build',
+    codeUrl: codeUrl + '6_wizard_react',
+  },
 ];
 
 tasks.map(task => {
@@ -59,14 +66,3 @@ tasks.map(task => {
     </tr>
   `;
 });
-
-// table.innerHTML += `
-//   <thead>
-//     <tr>
-//       <th></th>
-//       <th colspan="3">Total</th>
-//       <th class="text-right">-</th>
-//       <th class="text-right">-</th>
-//     </tr>
-//   </thead>
-// `;
