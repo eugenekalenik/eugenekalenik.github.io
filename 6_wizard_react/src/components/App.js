@@ -3,11 +3,12 @@ import Header from './Header';
 import Page from './Page';
 import Buttons from './Buttons';
 import Table from './Table';
+import { steps } from '../data';
 
 
 class App extends Component {
   state = {
-    steps: ['Make', 'Model', 'Transmission', 'Fuel type', 'Finish'],
+    steps,
     step: 0,
     make: '',
     model: '',
@@ -16,7 +17,7 @@ class App extends Component {
     cars: [],
   }
 
-  prev = () => {
+  back = () => {
     if (this.state.step === 1) {
       this.setState({ model: '' });
     }
@@ -24,18 +25,24 @@ class App extends Component {
     this.setState({ step: this.state.step - 1 });
   }
 
-  next = () => {
+  continue = () => {
     this.setState({ step: this.state.step + 1 });
   }
 
-  reset = () => {
+  addCar = () => {
     this.setState({
       cars: [...this.state.cars, {
         make: this.state.make,
         model: this.state.model,
         transmission: this.state.transmission,
         fuelType: this.state.fuelType,
-      }],
+      }]
+    });
+    this.reset();
+  }
+
+  reset = () => {
+    this.setState({
       step: 0,
       make: '',
       model: '',
@@ -64,28 +71,27 @@ class App extends Component {
     const { step, steps, cars } = this.state;
 
     return (
-      <div className="app">
+      <>
         <Header />
-        <div className="container">
-          {steps.map((item, index) => step === steps.indexOf(item) && <Page
-            key={index}
-            item={item}
-            state={this.state}
-            onChangeMake={this.changeMake}
-            onChangeModel={this.changeModel}
-            onChangeTransmission={this.changeTransmission}
-            onChangeFuelType={this.changeFuelType}
-          />
-          )}
-          <Buttons
-            state={this.state}
-            onPrev={this.prev}
-            onNext={this.next}
-            onReset={this.reset}
-          />
-        </div>
-        {!!cars.length && <Table state={this.state} />}
-      </div>
+        { steps.map((item, index) => step === steps.indexOf(item) && <Page
+          key={ index }
+          item={ item }
+          state={ this.state }
+          onChangeMake={ this.changeMake }
+          onChangeModel={ this.changeModel }
+          onChangeTransmission={ this.changeTransmission }
+          onChangeFuelType={ this.changeFuelType }
+        />
+        ) }
+        <Buttons
+          state={ this.state }
+          onBack={ this.back }
+          onContinue={ this.continue }
+          onAdd={ this.addCar }
+          onReset={ this.reset }
+        />
+        { !!cars.length && <Table state={ this.state } /> }
+      </>
     );
   }
 }
