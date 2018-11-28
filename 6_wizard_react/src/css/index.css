@@ -40,3 +40,8 @@
 .page {
   min-height: 200px;
 }
+
+.btn {
+  border-radius: 2px;
+  text-transform: uppercase;
+}

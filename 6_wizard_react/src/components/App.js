@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Table from './Table';
-import Buttons from './Buttons';
 import Page from './Page';
+import Buttons from './Buttons';
+import Table from './Table';
 
 
 class App extends Component {
