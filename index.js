@@ -7,14 +7,14 @@ const tasks = [
     title: 'Canvas. Rectangle & Round.',
     description: '',
     demoUrl: '',
-    codeUrl: codeUrl + '',
+    codeUrl: '',
   },
   {
     id: 2, maxScore: 4, score: '-',
     title: 'Wizard.',
     description: '',
     demoUrl: '',
-    codeUrl: codeUrl + '',
+    codeUrl: '',
   },
   {
     id: 3, maxScore: 4, score: 3.5,
@@ -31,18 +31,18 @@ const tasks = [
     codeUrl: codeUrl + '4_chart',
   },
   {
-    id: 5, maxScore: '-', score: '-',
+    id: 5, maxScore: '6', score: '-',
     title: 'Canvas. Image Crop.',
     description: '',
     demoUrl: '',
-    codeUrl: codeUrl + '',
+    codeUrl: '',
   },
   {
     id: 6, maxScore: '-', score: '-',
     title: 'Stepper.',
     description: 'React, Bootstrap',
-    demoUrl: '6_wizard_react/build',
-    codeUrl: codeUrl + '6_wizard_react',
+    demoUrl: '',
+    codeUrl: '6_wizard_react',
   },
 ];
 
@@ -50,14 +50,14 @@ tasks.map(task => {
   tbody.innerHTML += `
     <tr>
       <td>${task.id}</td>
-      <td>${task.title}<div class="small">${task.description}</div></td>
+      <td>${task.title} <div class="small">${task.description}</div></td>
       <td class="text-center">
         ${task.demoUrl === '' ? '-' : `<a href=${task.demoUrl}>
           <i class="material-icons">pageview</i>
         </a>`}
       </td>
       <td class="text-center">
-        ${task.demoUrl === '' ? '-' : `<a href=${task.codeUrl}>
+        ${task.codeUrl === '' ? '-' : `<a href=${task.codeUrl}>
           <i class="material-icons">code</i>
         </a>`}
       </td>
