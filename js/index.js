@@ -9,8 +9,7 @@ import { otherTasks } from './other-tasks.js';
         <td>${task.id}</td>
         <td>${task.title}</td>
         <td class="text-muted">${task.description}</td>
-        <td class="text-right">${task.maxScore}</td>
-        <td class="text-right">${task.score}</td>
+        <td class="text-right">${task.score}/${task.maxScore}</td>
         <td class="text-center">
           ${task.demoPath === '' ? '-' : `<a href=${task.demoPath}>
             <i class="material-icons">pageview</i>
@@ -31,6 +30,7 @@ import { otherTasks } from './other-tasks.js';
         <td>${task.id}</td>
         <td>${task.title}</td>
         <td class="text-muted">${task.description}</td>
+        <td class="text-right">${task.score}/${task.maxScore}</td>
         <td class="text-center">
           ${task.demoPath === '' ? '-' : `<a href=${task.demoPath}>
             <i class="material-icons">pageview</i>

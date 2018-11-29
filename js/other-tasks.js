@@ -4,6 +4,8 @@ import { codeUrl, demoUrl } from './constants.js';
 export const otherTasks = [
   {
     id: 1,
+    maxScore: '-',
+    score: '-',
     title: 'Javascript Memory Game',
     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit',
     codePath: codeUrl + 'javascript-memory-game/',
