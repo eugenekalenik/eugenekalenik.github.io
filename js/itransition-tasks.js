@@ -74,4 +74,13 @@ export const iTasks = [
     codePath: codeUrl + 'i8_news_react_ts/',
     demoPath: demoUrl + 'i8_news_react_ts/',
   },
+  {
+    id: 9,
+    maxScore: '-',
+    score: '-',
+    title: 'Stepper',
+    description: 'React, TypeScript',
+    codePath: codeUrl + 'i9_stepper_react_typescript/',
+    demoPath: demoUrl + 'i9_stepper_react_typescript/',
+  },
 ];
