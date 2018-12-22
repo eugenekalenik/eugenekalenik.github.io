@@ -62,8 +62,8 @@ export const iTasks = [
     score: '-',
     title: 'Stepper (Wizard)',
     description: 'React',
-    codePath: codeUrl + 'i7_stepper_react_last/',
-    demoPath: demoUrl + 'i7_stepper_react_last/',
+    codePath: codeUrl + 'i7_stepper_react/',
+    demoPath: demoUrl + 'i7_stepper_react/',
   },
   {
     id: 8,
