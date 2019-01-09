@@ -83,4 +83,13 @@ export const iTasks = [
     codePath: codeUrl + 'i9_stepper_react_typescript/',
     demoPath: demoUrl + 'i9_stepper_react_typescript/',
   },
+  {
+    id: 10,
+    maxScore: '-',
+    score: '-',
+    title: 'Calculator',
+    description: 'React, Redux, TypeScript',
+    codePath: codeUrl + 'i10_calculator_react_redux_typescript/',
+    demoPath: demoUrl + 'i10_calculator_react_redux_typescript/',
+  },
 ];
