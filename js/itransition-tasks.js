@@ -92,4 +92,13 @@ export const iTasks = [
     codePath: codeUrl + 'i10_calculator_react_redux_typescript/',
     demoPath: demoUrl + 'i10_calculator_react_redux_typescript/',
   },
+  {
+    id: 11,
+    maxScore: '-',
+    score: '-',
+    title: 'News fetcher',
+    description: 'React, Redux, TypeScript, Fetch API',
+    codePath: codeUrl + 'i11_news_react_redux_ts/',
+    demoPath: demoUrl + 'i11_news_react_redux_ts/',
+  },
 ];
