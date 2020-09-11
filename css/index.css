@@ -1,0 +1,32 @@
+:root {
+  --color-white: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto',
+    Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  color: var(--font-color);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body {
+  background: var(--color-white);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  max-width: 512px;
+  margin: auto;
+}
